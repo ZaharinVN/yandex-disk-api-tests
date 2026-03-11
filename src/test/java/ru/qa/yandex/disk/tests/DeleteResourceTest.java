@@ -7,6 +7,17 @@ import ru.qa.yandex.disk.utils.PathUtils;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
+
+/*
+ * Тесты DELETE /v1/disk/resources — удаление ресурсов
+ * Полный CRUD цикл:
+ * 1. PUT /resources — создаем
+ * 2. DELETE /resources?permanently=true — удаляем (204/202)
+ * Покрытие:
+ * ✅ Удаление созданного ресурса
+ * ✅ Удаление несуществующего (404)
+ */
+
 public class DeleteResourceTest extends BaseApiTest {
 
     @Test

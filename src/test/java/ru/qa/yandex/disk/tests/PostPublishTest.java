@@ -7,6 +7,17 @@ import ru.qa.yandex.disk.utils.PathUtils;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
+
+/*
+ * Тесты публикации ресурсов PUT /v1/disk/resources/publish
+ * Сценарий:
+ * 1. PUT /resources — создаем папку
+ * 2. PUT /resources/publish — публикуем (200 OK)
+ * Покрытие:
+ * ✅ Публикация существующего ресурса
+ * ✅ Публикация несуществующего (404)
+ */
+
 public class PostPublishTest extends BaseApiTest {
 
     @Test

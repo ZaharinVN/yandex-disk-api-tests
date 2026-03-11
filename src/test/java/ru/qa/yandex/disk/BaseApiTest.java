@@ -6,6 +6,15 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.BeforeClass;
 import ru.qa.yandex.disk.config.Config;
 
+/*
+ * Базовый класс для всех API-тестов Яндекс.Диска
+ * Настраивает:
+ * - baseURI: https://cloud-api.yandex.net/v1/disk
+ * - Authorization: OAuth токен из YANDEX_DISK_OAUTH
+ * - Логирование всех запросов/ответов (LogDetail.ALL)
+ * Тесты пропускаются, если токен не установлен
+ */
+
 public abstract class BaseApiTest {
 
     public static RequestSpecification spec;

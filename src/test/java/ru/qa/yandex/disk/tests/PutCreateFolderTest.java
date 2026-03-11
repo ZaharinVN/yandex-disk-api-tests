@@ -7,6 +7,14 @@ import ru.qa.yandex.disk.utils.PathUtils;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
+/*
+ * Тесты PUT /v1/disk/resources — создание папок
+ * Покрытие ТЗ:
+ * ✅ Создание папки (201 Created / 409 Conflict)
+ * ✅ Некорректный путь (400 Bad Request)
+ * Кросс-проверка: создание → получение ресурса
+ */
+
 public class PutCreateFolderTest extends BaseApiTest {
 
     @Test
